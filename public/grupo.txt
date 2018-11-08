@@ -1,1 +1,1 @@
-{"Nombre de Grupo":"asdas","Descripcion":"asdasd","Integrantes":"Diego Zapata"}
+{"Nombre de Grupo":"","Descripcion":"","Integrantes":"Rodrigo Becerra"}

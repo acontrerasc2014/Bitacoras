@@ -1,5 +1,5 @@
 
-@extends('layouts.diseño')
+@extends('layouts.design')
 
 @section('crear-respuestas')
 
