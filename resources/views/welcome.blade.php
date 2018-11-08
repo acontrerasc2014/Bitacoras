@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Bitacoras Grupales
+                    Bitacoras UCT
                 </div>
                 
                 <div class="links">
