@@ -14,6 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/bitacorasgrupales', function () {
+    return view('homebitacoras');
+});
+
 Route::resource('comentario', 'ComentController');
 Route::resource('pregunta', 'PregController');
 Route::resource('respuesta', 'RespController');

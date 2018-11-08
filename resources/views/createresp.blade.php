@@ -9,3 +9,4 @@
     <input type="text" name="resp" id="resp"> <span> Ingresa respuesta</span> <br> 
     <br>
 <input type="submit" name="submit" value="Enviar!" onclick=alert("Respuesta-Enviada")  >
+@stop

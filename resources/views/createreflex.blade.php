@@ -12,4 +12,4 @@
     <br> 
     <input type="submit" name="submit" value="Enviar!" onclick=alert("Reflexion-Enviada")  >
 </form>
-    
+@stop  
