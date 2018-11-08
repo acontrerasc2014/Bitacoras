@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::resource('comentario', 'ComentController');
+Route::resource('pregunta', 'PregController');
+Route::resource('respuesta', 'RespController');
+Route::resource('reflexion', 'ReflexController');
+Route::resource('tema', 'TemaController');
+Route::resource('grupo', 'GrupoController');
+Route::resource('cita', 'CitaController');
