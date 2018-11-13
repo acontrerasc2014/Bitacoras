@@ -1,18 +1,23 @@
 
-@extends('layouts.diseño')
+@extends('layouts.design')
 
 @section('crear-citas')
 
-<h1>Crear Citas</h1>
-<form class="form-group" action="/cita" method="POST">
-    {!!csrf_field() !!} 
-    <input type="text" name="citas" id="citas"> <span> Ingresa cita</span> <br> 
-    <br>
-    <input type="text" name="autor" id="autor"> <span> Ingrese autor</span> <br> 
-    <br>
-    <input type="text" name="texto" id="texto"> <span> Bibliografia</span> <br> 
-    <br>
-    <input type="submit" name="submit" value="Enviar!" onclick=alert("Cita-Enviada")  >
-</form>
+<div class="container">
+    <h1>Crear Citas</h1>
+    <form class="form-group" action="/cita" method="POST">
+         {!!csrf_field() !!} 
+         <span>Ingrese cita</span>
+        <input type="text" name="citas" id="citas"> <br> 
+        <br>
+        <span> Ingrese autor</span>
+        <input type="text" name="autor" id="autor">  <br> 
+        <br>
+        <span> Bibliografia</span>
+        <input type="text" name="texto" id="texto">  <br> 
+        <br>
+        <input type="submit" name="submit" value="Enviar!" onclick=alert("Cita-Enviada")  >
+    </form>
+</div>
     
 @stop
