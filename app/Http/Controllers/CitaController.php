@@ -32,6 +32,8 @@ class CitaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    
+    //Funcion para crear el json con la Cita, Autor y Bibliografia
     public function store(Request $request)
     {
         if(isset($_POST['submit'])){
