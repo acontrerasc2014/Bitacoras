@@ -32,6 +32,8 @@ class TemaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+     //Implementación de función store para recibir datos del formulario
     public function store(Request $request)
     {
         if(isset($_POST['submit'])){
