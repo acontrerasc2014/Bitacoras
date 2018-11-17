@@ -12,6 +12,10 @@
 */
 
 Route::get('/', function () {
+    return view('welcome2');
+});
+
+Route::get('/welcomeanterior', function () {
     return view('welcome');
 });
 Route::get('/bitacorasgrupales', function () {
