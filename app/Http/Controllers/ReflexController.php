@@ -35,18 +35,24 @@ class ReflexController extends Controller
     public function store(Request $request)
     {
         if(isset($_POST['submit'])){
-
             $arreglo = array ("Nombre"=> $_POST["nom"], 
-                              "Reflexion" =>$_POST["reflex"]);
+                        "Reflexion" =>$_POST["reflex"]);
+        
             $JSON = json_encode($arreglo);
-            echo "<pre>";
-            print_r($JSON);
-            echo "</pre>";
-    
-            
-            $archivo_nombre = "reflexion.txt";
+
+            $archivo_nombre = "reflexion.json";
             file_put_contents($archivo_nombre, $JSON);  
             echo '<script language="javascript">alert("Reflexion exportada");</script>';
+
+$readjson = file_get_contents('reflexion.json') ;
+
+$data = json_decode($readjson, true);
+
+echo "Nombre:"."<br/>";
+echo $data["Nombre"]."<br/>";
+echo "Reflexión:"."<br/>";
+echo $data["Reflexion"]."<br/>";
+
     }
     return ;
     }
