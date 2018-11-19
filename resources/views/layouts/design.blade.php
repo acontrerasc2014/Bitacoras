@@ -28,6 +28,7 @@
     @yield('crear-reflexion')
     @yield('crear-respuestas')
     @yield('crear-Tema')
+    @yield('ver-semana')
     
     
 </body>

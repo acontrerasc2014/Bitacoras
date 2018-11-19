@@ -42,6 +42,7 @@
                     <a href="/pregunta">Preguntas</a>
                     <a href="/respuesta">Respuestas</a>
                     <a href="/cita">Crear Citas</a>
+                    <a href="/semanas">Ver Semanas</a>
                 </div>
             </div>
         </div>
