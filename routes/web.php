@@ -29,3 +29,4 @@ Route::resource('reflexion', 'ReflexController');
 Route::resource('tema', 'TemaController');
 Route::resource('grupo', 'GrupoController');
 Route::resource('cita', 'CitaController');
+Route::get('semanas/{tema?}', "semcontroller@semana")->name("trabajos");
