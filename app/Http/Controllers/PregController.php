@@ -36,7 +36,9 @@ class PregController extends Controller
     {
         {
             if(isset($_POST['submit'])){
-                $arreglo = array ("Pregunta"=> $_POST["preg"]);
+                $arreglo = array ( "Tipo"      => "preguntas",
+                                   "Nombre"  => $_POST["nombre"],
+                                   "Pregunta"=> $_POST["preg"]);
                 $JSON = json_encode($arreglo);
                 echo "<pre>";
                 print_r($JSON);

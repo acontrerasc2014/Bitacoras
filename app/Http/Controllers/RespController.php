@@ -37,7 +37,9 @@ class RespController extends Controller
         {
             if(isset($_POST['submit'])){
     
-                $arreglo = array ("Respuesta"=> $_POST["resp"]);
+                $arreglo = array ( "Tipo"     => "Respuesta",
+                                   "Nombre"   => $_POST["nombre"],
+                                   "Respuesta"=> $_POST["resp"]);
                 $JSON = json_encode($arreglo);
                 echo "<pre>";
                 print_r($JSON);
