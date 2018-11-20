@@ -34,25 +34,28 @@ class PregController extends Controller
      */
     public function store(Request $request)
     {
-        {
-            if(isset($_POST['submit'])){
-                $arreglo = array ( "Tipo"      => "preguntas",
-                                   "Nombre"  => $_POST["nombre"],
-                                   "Pregunta"=> $_POST["preg"]);
-                $JSON = json_encode($arreglo);
-                echo "<pre>";
-                print_r($JSON);
-                echo "</pre>";
-        
-                
-                $archivo_nombre = "pregunta.txt";
-                file_put_contents($archivo_nombre, $JSON);  
-                echo '<script language="javascript">alert("Pregunta exportada");</script>';
+        if(isset($_POST['submit'])){
+
+            $arreglo = array (  "Tipo"      => "preguntas",
+                                "Nombre"  => $_POST["nombre"],
+                                "Pregunta"=> $_POST["preg"]);
+            $JSON = json_encode($arreglo);
+            $archivo_nombre = "pregunta.json";
+            file_put_contents($archivo_nombre, $JSON);  
+            echo '<script language="javascript">alert("Pregunta exportada");</script>';
+
+            $readjson = file_get_contents('pregunta.json');
+
+            $data = json_decode($readjson, true);
+
+            echo "Nombre:"."<br/>";
+            echo $data["Nombre"]."<br/>";
+            echo "Pregunta"."<br/>";
+            echo $data["Pregunta"]."<br/>";
         }
-        return ;
+    return;
     }
         
-    }
 
     /**
      * Display the specified resource.

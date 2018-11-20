@@ -34,25 +34,28 @@ class RespController extends Controller
      */
     public function store(Request $request)
     {
-        {
-            if(isset($_POST['submit'])){
+        if(isset($_POST['submit'])){
     
-                $arreglo = array ( "Tipo"     => "Respuesta",
-                                   "Nombre"   => $_POST["nombre"],
-                                   "Respuesta"=> $_POST["resp"]);
-                $JSON = json_encode($arreglo);
-                echo "<pre>";
-                print_r($JSON);
-                echo "</pre>";
-        
-                
-                $archivo_nombre = "respuesta.txt";
-                file_put_contents($archivo_nombre, $JSON);  
-                echo '<script language="javascript">alert("respuesta exportada");</script>';
+            $arreglo = array ( "Tipo"     => "Respuesta",
+                               "Nombre"   => $_POST["nombre"],
+                               "Respuesta"=> $_POST["resp"]);
+            $JSON = json_encode($arreglo);                      
+            $archivo_nombre = "respuesta.json";
+            file_put_contents($archivo_nombre, $JSON);  
+            echo '<script language="javascript">alert("respuesta exportada");</script>';
+
+            $readjson= file_get_contents('respuesta.json');
+
+            $data = json_decode($readjson, true);
+
+            echo "Nombre"."<br/>";
+            echo $data["Nombre"]."<br/>";
+            echo "Respuesta"."<br/>";
+            echo $data["Respuesta"]."<br/>";
         }
-        return ;
+    return;
     }
-    }
+    
 
     /**
      * Display the specified resource.
