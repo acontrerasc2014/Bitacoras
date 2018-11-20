@@ -16,7 +16,7 @@
 
         Integrantes del Grupo: <br><br>
 
-        <select name="select" id="select" class="selection" multiple="multiple" style="width:40%" >
+        <select name="access_list[]" size="5" id="select" class="selection" multiple="multiple" style="width:40%" >
             <option  disabled="disabled"><--Elegir Integrantes--></option>    
             <option>Francisco Giacomozzi</option> 
             <option>Diego Flores</option>
@@ -24,6 +24,7 @@
             <option>Diego Zapata</option>
             <option>Rodrigo Becerra</option>
         </select><br><br>
+        
 
         <input type="submit" name="submit" value="Enviar!" onclick=alert("Grupo-Creado")  >
 
