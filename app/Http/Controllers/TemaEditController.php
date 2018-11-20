@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class TemaController extends Controller
+class TemaEditController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,7 @@ class TemaController extends Controller
      */
     public function index()
     {
-        return view("createtema");
+        //
     }
 
     /**
@@ -23,7 +23,7 @@ class TemaController extends Controller
      */
     public function create()
     {
-        return view("createtema");
+        //
     }
 
     /**
@@ -32,8 +32,6 @@ class TemaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-
-     //Implementación de función store para recibir datos del formulario
     public function store(Request $request)
     {
         if(isset($_POST['submit'])){
@@ -60,16 +58,10 @@ class TemaController extends Controller
             echo "Descripcion:"."<br/>";
             echo $data["Descripcion"]."<br/>";
             echo "<br/>";
-            echo "Te equivocaste en algo? Editalo!";
-            echo "<br/>";
-           echo "<a href='/editar'>Editar!</a>";
-            
-
+            echo '<script language="javascript">alert("Tema Editado Listo");</script>';
             
     }
-    return ;
 }
-    
 
     /**
      * Display the specified resource.

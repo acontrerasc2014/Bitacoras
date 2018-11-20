@@ -38,14 +38,17 @@ class ComentController extends Controller
 
             $arreglo = array ("Comentario"=> $_POST["coment"]);
             $JSON = json_encode($arreglo);
-            echo "<pre>";
-            print_r($JSON);
-            echo "</pre>";
-    
-            
-            $archivo_nombre = "comentario.txt";
+            $archivo_nombre = "comentario.json";
             file_put_contents($archivo_nombre, $JSON);  
             echo '<script language="javascript">alert("comentario exportado");</script>';
+
+            $readjson = file_get_contents('comentario.json') ;
+
+            $data = json_decode($readjson, true);
+
+            echo "Comentario:"."<br/>";
+            echo $data["Comentario"]."<br/>";
+
     }
     return ;
 }

@@ -39,15 +39,19 @@ class GrupoController extends Controller
             $arreglo = array ("Nombre de Grupo"=> $_POST["nombre"],
                               "Descripcion"=> $_POST["desc"],  
                               "Integrantes" =>$_POST["select"]);
-            $JSON = json_encode($arreglo);
-            echo "<pre>";
-            print_r($JSON);
-            echo "</pre>";
-    
-            
-            $archivo_nombre = "grupo.txt";
+            $JSON = json_encode($arreglo);            
+            $archivo_nombre = "grupo.json";
             file_put_contents($archivo_nombre, $JSON);  
             echo '<script language="javascript">alert("Datos de grupo exportados");</script>';
+
+            $readjson = file_get_contents('grupo.json') ;
+
+            $data = json_decode($readjson, true);
+
+            echo "Nombre:"."<br/>";
+            echo $data["Nombre de Grupo"]."<br/>";
+            echo "Descripcion:"."<br/>";
+            echo $data["Descripcion"]."<br/>";
     }
     return ;
     }
