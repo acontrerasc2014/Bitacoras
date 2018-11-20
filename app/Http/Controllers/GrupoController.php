@@ -54,7 +54,22 @@ class GrupoController extends Controller
             echo "Descripcion:"."<br/>";
             echo $data["Descripcion"]."<br/>";
             echo "Participantes:"."<br/>";
-            print_r(array_values($data["Integrantes"])); 
+            
+            // Recorre el arreglo para mostrarlo en pantalla , cuando llega al ultimo elemento omite la ,
+            foreach($data["Integrantes"] as $value){ 
+                if ($value == end($data["Integrantes"])){
+                    echo $value;
+                }
+
+                else{
+                    echo $value . " , ";   
+                }
+        
+            }
+
+
+        
+            //print_r(array_values($data["Integrantes"][0])); 
             
             //echo $data["Integrantes"]."<br/>";
     }
