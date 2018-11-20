@@ -40,7 +40,8 @@ class CitaController extends Controller
 
             $arreglo = array ("Cita"=> $_POST["citas"],
                               "Autor"=> $_POST["autor"],  
-                              "Bibliografia" =>$_POST["texto"]);
+                              "Bibliografia" =>$_POST["texto"],
+                              "Fecha" =>$_POST['fecha']);
             $JSON = json_encode($arreglo);
             echo "<pre>";
             print_r($JSON);

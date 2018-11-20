@@ -16,6 +16,8 @@
         <span> Bibliografia</span>
         <input type="text" name="texto" id="texto">  <br> 
         <br>
+        <span> Fecha de la Cita </span>
+        <input type="text" name="fecha" id="fecha">  <br>
         <input type="submit" name="submit" value="Enviar!" onclick=alert("Cita-Enviada")  >
     </form>
 </div>
