@@ -52,6 +52,8 @@ class GrupoController extends Controller
             echo $data["Nombre de Grupo"]."<br/>";
             echo "Descripcion:"."<br/>";
             echo $data["Descripcion"]."<br/>";
+            echo "Participantes:"."<br/>";
+            echo $data["Integrantes"]."<br/>";
     }
     return ;
     }
