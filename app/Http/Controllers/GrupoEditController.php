@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class GrupoController extends Controller
+class GrupoEditController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,7 @@ class GrupoController extends Controller
      */
     public function index()
     {
-        return view("creategrupo");
+        //
     }
 
     /**
@@ -23,7 +23,7 @@ class GrupoController extends Controller
      */
     public function create()
     {
-        return view("creategrupo");
+        //
     }
 
     /**
@@ -35,19 +35,45 @@ class GrupoController extends Controller
     public function store(Request $request)
     {
         if(isset($_POST['submit'])){
-
-            $arreglo = array ("Nombre de Grupo"=> $_POST["nombre"],
-                              "Descripcion"=> $_POST["desc"],  
-                              "Integrantes" =>$_POST["access_list"]);
-            
-            $JSON = json_encode($arreglo);            
-            $archivo_nombre = "grupo.json";
-            file_put_contents($archivo_nombre, $JSON);  
-            echo '<script language="javascript">alert("Datos de grupo exportados");</script>';
+            $Nombre2= $_POST["nombre"];
+            $Descripcion2= $_POST["desc"];
+            $Integrantes2= $_POST["access_list"];  
 
             $readjson = file_get_contents('grupo.json') ;
 
             $data = json_decode($readjson, true);
+            $data["Nombre de Grupo"] = $Nombre2;
+            $data["Descripcion"] = $Descripcion2;
+            $data["Integrantes"] = $Integrantes2;
+            
+            echo "Nombre:"."<br/>";
+            echo $data["Nombre de Grupo"]."<br/>";
+            echo "Descripcion:"."<br/>";
+            echo $data["Descripcion"]."<br/>";
+            echo "Participantes:"."<br/>";
+            
+            // Recorre el arreglo para mostrarlo en pantalla , cuando llega al ultimo elemento omite la ,
+            foreach($data["Integrantes"] as $value){ 
+                if ($value == end($data["Integrantes"])){
+                    echo $value;
+                }
+
+                else{
+                    echo $value . " , ";   
+                }
+        
+            }
+            $JSON = json_encode($data);            
+            $archivo_nombre = "grupo.json";
+            file_put_contents($archivo_nombre, $JSON);
+            echo '<script language="javascript">alert("Grupo Editado Listo");</script>';
+
+            echo "<br/>";
+            echo "archivo json GRUPO abierto xDDDDDDDDDDDDDDD";
+            echo "<br/>";
+            $readjson2 = file_get_contents('grupo.json') ;
+
+            $data2 = json_decode($readjson2, true);
 
             echo "Nombre:"."<br/>";
             echo $data["Nombre de Grupo"]."<br/>";
@@ -66,18 +92,7 @@ class GrupoController extends Controller
                 }
         
             }
-            echo "<br/>";
-            echo "Te equivocaste en algo? Editalo!";
-            echo "<br/>";
-            echo "<a href='/editarGrupo'>Editar!</a>";
-
-
-        
-            //print_r(array_values($data["Integrantes"][0])); 
-            
-            //echo $data["Integrantes"]."<br/>";
-    }
-    return ;
+        } 
     }
 
     /**
