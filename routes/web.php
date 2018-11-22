@@ -30,6 +30,14 @@ Route::get('/editarGrupo', function () {
     return view('editargrupo');
 });
 
+Route::get('/verpreguntasrespuestas', function () {
+    return view('verpreguntasrespuestas');
+});
+
+Route::get('/vercomentarios', function () {
+    return view('vercomentarios');
+});
+
 Route::resource('comentario', 'ComentController');
 Route::resource('pregunta', 'PregController');
 Route::resource('respuesta', 'RespController');
@@ -40,3 +48,4 @@ Route::resource('grupo', 'GrupoController');
 Route::resource('grupoedit', 'GrupoEditController');
 Route::resource('cita', 'CitaController');
 Route::get('semanas/{tema?}', "semcontroller@semana")->name("trabajos");
+

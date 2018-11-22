@@ -31,6 +31,8 @@
     @yield('crear-respuestas')
     @yield('crear-Tema')
     @yield('ver-semana')
+    @yield('preguntas-respuestas')
+    @yield('ver-comentarios')
     
     
 </body>
