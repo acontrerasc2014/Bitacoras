@@ -34,21 +34,21 @@ class TemaEditController extends Controller
      */
     public function store(Request $request)
     {
+        
         if(isset($_POST['submit'])){
-
-            $arreglo = array ("Nombre"=> $_POST["nombre"],
-                              "Correo"=> $_POST["email"],
-                              "Titulo"=> $_POST["titulo"],  
-                              "Descripcion" =>$_POST["tema"]);
-            $JSON = json_encode($arreglo);            
-            $archivo_nombre = "tema.json";
-            file_put_contents($archivo_nombre, $JSON);  
-            echo '<script language="javascript">alert("Tema exportado");</script>';
+            $Nombre2= $_POST["nombre"];
+            $Correo2= $_POST["email"];
+            $Titulo2= $_POST["titulo"];  
+            $Descripcion2 =$_POST["tema"];
 
             $readjson = file_get_contents('tema.json') ;
 
             $data = json_decode($readjson, true);
-
+            $data["Nombre"] = $Nombre2;
+            $data["Correo"] = $Correo2;
+            $data["Titulo"] = $Titulo2;
+            $data["Descripcion"] = $Descripcion2;
+            
             echo "Nombre:"."<br/>";
             echo $data["Nombre"]."<br/>";
             echo "Correo:"."<br/>";
@@ -58,7 +58,25 @@ class TemaEditController extends Controller
             echo "Descripcion:"."<br/>";
             echo $data["Descripcion"]."<br/>";
             echo "<br/>";
+            $JSON = json_encode($data);            
+            $archivo_nombre = "tema.json";
+            file_put_contents($archivo_nombre, $JSON);
             echo '<script language="javascript">alert("Tema Editado Listo");</script>';
+
+            echo "archivo json abierto xDDDDDDDDDDDDDDD";
+            echo "<br/>";
+            $readjson2 = file_get_contents('tema.json') ;
+
+            $data2 = json_decode($readjson2, true);
+
+            echo "Nombre:"."<br/>";
+            echo $data2["Nombre"]."<br/>";
+            echo "Correo:"."<br/>";
+            echo $data2["Correo"]."<br/>";
+            echo "Titulo:"."<br/>";
+            echo $data2["Titulo"]."<br/>";
+            echo "Descripcion:"."<br/>";
+            echo $data2["Descripcion"]."<br/>";    
             
     }
 }

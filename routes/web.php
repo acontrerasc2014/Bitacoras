@@ -22,8 +22,12 @@ Route::get('/bitacorasgrupales', function () {
     return view('homebitacoras');
 });
 
-Route::get('/editar', function () {
+Route::get('/editarTema', function () {
     return view('editartema');
+});
+
+Route::get('/editarGrupo', function () {
+    return view('editargrupo');
 });
 
 Route::resource('comentario', 'ComentController');
@@ -33,5 +37,6 @@ Route::resource('reflexion', 'ReflexController');
 Route::resource('tema', 'TemaController');
 Route::resource('temaedit', 'TemaEditController');
 Route::resource('grupo', 'GrupoController');
+Route::resource('grupoedit', 'GrupoEditController');
 Route::resource('cita', 'CitaController');
 Route::get('semanas/{tema?}', "semcontroller@semana")->name("trabajos");

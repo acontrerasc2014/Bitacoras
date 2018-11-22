@@ -62,7 +62,7 @@ class TemaController extends Controller
             echo "<br/>";
             echo "Te equivocaste en algo? Editalo!";
             echo "<br/>";
-           echo "<a href='/editar'>Editar!</a>";
+            echo "<a href='/editarTema'>Editar!</a>";
             
 
             
