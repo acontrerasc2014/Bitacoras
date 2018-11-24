@@ -21,6 +21,8 @@
                 <div class="container">
                 <h8>Estos son los temas de la Semana 1:</h8>
                 <p name="Tema1">1.- Derivadas e Integrales</p>
+                <a href="/verpreguntasrespuestas" style="color:blue;">Preguntas/Respuestas</a><br>
+                <a href="/vercomentarios" style="color:blue;">Comentarios</a>
                 <p name="Tema2">2.- Binomio de Newton y Factorial</p>
                 <p name="Tema3">3.- Sumatorias Simples y Dobles</p>
                 </div>
