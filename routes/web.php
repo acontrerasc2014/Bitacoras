@@ -38,6 +38,10 @@ Route::get('/vercomentarios', function () {
     return view('vercomentarios');
 });
 
+Route::get('/vergrupos', function () {
+    return view('vergrupos');
+});
+
 Route::resource('comentario', 'ComentController');
 Route::resource('pregunta', 'PregController');
 Route::resource('respuesta', 'RespController');
