@@ -42,6 +42,10 @@ Route::get('/vergrupos', function () {
     return view('vergrupos');
 });
 
+Route::get('/verreflexion', function () {
+    return view('verreflexion');
+});
+
 Route::resource('comentario', 'ComentController');
 Route::resource('pregunta', 'PregController');
 Route::resource('respuesta', 'RespController');
