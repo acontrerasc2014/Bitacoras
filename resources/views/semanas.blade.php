@@ -8,12 +8,25 @@
 
         <h8>Estos son los temas de la Semana 1:</h8>
         <p name="Tema1">1.- Derivadas e Integrales</p>
-        <a href="/verpreguntasrespuestas" style="color:blue;">Preguntas/Respuestas</a><br>
-        <a href="/vercomentarios" style="color:blue;">Comentarios</a>
+        <button type="button" class="btn btn-dark" onclick="window.location.href='/verpreguntasrespuestas' " style="margin-bottom:20px">Ver Preguntas y Respuestas</button>
+        <button type="button" class="btn btn-dark" onclick="window.location.href='/vercomentarios'" style="margin-bottom:20px">Ver Comentarios</button>
+        <button type="button" class="btn btn-dark" onclick="window.location.href=''" style="margin-bottom:20px">Ver Reflexiones</button>
+        <button type="button" class="btn btn-dark" onclick="window.location.href='/cita'" style="margin-bottom:20px">Citas</button>
+        <button type="button" class="btn btn-dark" onclick="window.location.href='/reflexion'" style="margin-bottom:20px">(Dentro de Ver Reflexiones)</button>
         <p name="Tema2">2.- Binomio de Newton y Factorial</p>
+        <button type="button" class="btn btn-dark" onclick="window.location.href='/verpreguntasrespuestas' " style="margin-bottom:20px">Ver Preguntas y Respuestas</button>
+        <button type="button" class="btn btn-dark" onclick="window.location.href='/vercomentarios'" style="margin-bottom:20px">Ver Comentarios</button>
+        <button type="button" class="btn btn-dark" onclick="window.location.href=''" style="margin-bottom:20px">Ver Reflexiones</button>
+        <button type="button" class="btn btn-dark" onclick="window.location.href='/cita'" style="margin-bottom:20px">Citas</button>
+        <button type="button" class="btn btn-dark" onclick="window.location.href='/reflexion'" style="margin-bottom:20px">(Dentro de Ver Reflexiones)</button>
         <p name="Tema3">3.- Sumatorias Simples y Dobles</p>
+        <button type="button" class="btn btn-dark" onclick="window.location.href='/verpreguntasrespuestas' " style="margin-bottom:20px">Ver Preguntas y Respuestas</button>
+        <button type="button" class="btn btn-dark" onclick="window.location.href='/vercomentarios'" style="margin-bottom:20px">Ver Comentarios</button>
+        <button type="button" class="btn btn-dark" onclick="window.location.href=''" style="margin-bottom:20px">Ver Reflexiones</button>
+        <button type="button" class="btn btn-dark" onclick="window.location.href='/cita'" style="margin-bottom:20px">Citas</button>
+        <button type="button" class="btn btn-dark" onclick="window.location.href='/reflexion'" style="margin-bottom:20px">(Dentro de Ver Reflexiones)</button>
 
-
+        <br>
         <h8>Estos son los temas de la Semana 2:</h8>
         <p name="Tema4">1.- Programacion en Objetos</p>
         <p name="Tema5">2.- Programacion Web</p>
@@ -40,5 +53,7 @@
         <p name="Tema16">1.- Bases de Datos</p>
         <p name="Tema17">2.- Eliminar y Actualizar Campos</p>
         <p name="Tema18">3.- Editar Columnas y Filas</p>
+
+        <button type="button" class="btn btn-dark" onclick="window.location.href='/tema'" style="margin:0 auto;width:200px;display: flex;align-items: center;justify-content: center; margin-top:30px;">Crear Tema</button>
     </div>
 @endsection              

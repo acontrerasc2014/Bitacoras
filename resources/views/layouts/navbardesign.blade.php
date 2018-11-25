@@ -24,14 +24,12 @@
                           <a class="nav-link" href="">Principal <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="">Item </a>
+                          <a class="nav-link" href="/semanas">Ver Semanas </a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="">Item 2</a>
+                          <a class="nav-link" href="/vergrupos">Ver Grupos</a>
                         </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="/welcomeanterior">Anterior</a>
-                        </li>
+                        
                     </ul>
                 </div>
         </nav>

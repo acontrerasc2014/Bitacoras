@@ -20,6 +20,7 @@
                       <p class="card-text">La mitad de todos los nuevos usuarios de drogas son menores de 18 años. La experimentación juega el papel más importante en el uso de drogas en adolescentes. Sin embargo, la experimentación es un hecho de la vida y sólo porque un adolescente ha probado drogas o alcohol no significa que se convertirá en un adicto.</p>
                     </div>
             </div>
+            <button type="button" class="btn btn-dark" onclick="window.location.href='/comentario'" style="margin:0 auto;width:200px;display: flex;align-items: center;justify-content: center; margin-top:30px;">Crear Comentario</button>
     <a href="/semanas" style="color:blue;">Volver a Semanas</a>
 </div>
 
