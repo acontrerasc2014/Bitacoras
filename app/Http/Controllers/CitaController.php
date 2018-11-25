@@ -43,14 +43,22 @@ class CitaController extends Controller
                               "Bibliografia" =>$_POST["texto"],
                               "Fecha" =>$_POST['fecha']);
             $JSON = json_encode($arreglo);
-            echo "<pre>";
-            print_r($JSON);
-            echo "</pre>";
-    
+            $archivo_nombre = "cita.json";
+            file_put_contents($archivo_nombre, $JSON);
+            echo'<script language="javascript">alert("Cita exportada");</script>';
             
-            $archivo_nombre = "cita.txt";
-            file_put_contents($archivo_nombre, $JSON);  
-            echo '<script language="javascript">alert("Cita exportada");</script>';
+            $readjson = file_get_contents('cita.json');
+
+            $data = json_decode($readjson, true);
+
+            echo "Cita:"."<br/>";
+            echo $data["Cita"]."<br/>";
+            echo "Autor:"."<br/>";
+            echo $data["Autor"]."<br/>";
+            echo "Bibliografia:"."<br/>";
+            echo $data["Bibliografia"]."<br/>";
+            echo "Fecha"."<br/>";
+            echo $data["Fecha"]."<br/>";
     }
     return ;
     }
