@@ -37,6 +37,7 @@
     @yield('preguntas-respuestas')
     @yield('ver-comentarios')
     @yield('ver-grupos')
+    @yield('ver-reflexion')
     
     
 </body>

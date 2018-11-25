@@ -1,6 +1,6 @@
 @extends('layouts.design')
 
-@section('ver-grupos') 
+@section('ver-reflexion') 
 
 <div class="container">
     <h1 style="text-align:center;">Reflexiones</h1>
