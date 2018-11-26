@@ -1,5 +1,5 @@
 @extends('layouts.design')
-
+@extends('layouts.navbardesign')
 @section('ver-grupos')
 
 <div class="container">

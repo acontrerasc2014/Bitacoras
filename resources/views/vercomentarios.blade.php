@@ -1,5 +1,5 @@
 @extends('layouts.design')
-
+@extends('layouts.navbardesign')
 @section('ver-comentarios')
 
 <div class="container">

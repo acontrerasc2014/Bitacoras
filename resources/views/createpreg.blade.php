@@ -1,6 +1,5 @@
-
 @extends('layouts.design')
-
+@extends('layouts.navbardesign')
 @section('crear-pregunta')
 
 <div class="container">

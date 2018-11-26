@@ -1,5 +1,5 @@
 @extends('layouts.design')
-
+@extends('layouts.navbardesign')
 @section('preguntas-respuestas')
 
 <div class="container">

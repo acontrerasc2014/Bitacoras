@@ -1,6 +1,5 @@
-
 @extends('layouts.design')
-
+@extends('layouts.navbardesign')
 @section('crear-citas')
 
 <div class="container">

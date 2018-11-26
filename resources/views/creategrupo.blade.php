@@ -1,7 +1,5 @@
-
-
 @extends('layouts.design')
-
+@extends('layouts.navbardesign')
 @section('crear-grupo')
 
 <div class="container">

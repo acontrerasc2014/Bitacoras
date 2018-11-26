@@ -1,3 +1,4 @@
+@extends('layouts.navbardesign')
 <!DOCTYPE html>
 <html>
 <head>

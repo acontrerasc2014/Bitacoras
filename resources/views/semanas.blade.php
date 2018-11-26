@@ -1,5 +1,5 @@
 @extends('layouts.design')
-
+@extends('layouts.navbardesign')
 @section('ver-semana')
     <div class="container">
 
