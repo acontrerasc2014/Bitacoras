@@ -24,6 +24,7 @@
                       <p style="font-weight:bold;">Integrantes: </p><p class="card-text">Francisco Giacomozzi, Diego Flores, Maximiliano Cartes, Diego Zapata, Rodrigo Becerra </p>
             </div>
             <button type="button" class="btn btn-dark" onclick="window.location.href='/grupo'" style="margin:0 auto;width:200px;display: flex;align-items: center;justify-content: center; margin-top:30px;">Crear Grupo</button>
+            <button type="button" class="btn btn-primary" onclick="window.location.href='/semanas'" style="margin:0 auto;width:200px;display: flex;align-items: center;justify-content: center; margin-top:30px;">Volver a Semanas</button>
     </div>
     
 </div>

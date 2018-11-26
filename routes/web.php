@@ -34,6 +34,10 @@ Route::get('/verpreguntasrespuestas', function () {
     return view('verpreguntasrespuestas');
 });
 
+Route::get('/vercitas', function () {
+    return view('vercitas');
+});
+
 Route::get('/vercomentarios', function () {
     return view('vercomentarios');
 });

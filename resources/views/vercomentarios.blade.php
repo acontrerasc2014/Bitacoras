@@ -3,7 +3,7 @@
 @section('ver-comentarios')
 
 <div class="container">
-    <h1>Comentarios sobre : "Tema 1"</h1>
+    <h1>Comentarios sobre : "Tema #?"</h1>
 
     <div class="card bg-light mb-3" style="width: 100%;margin-top:40px;" >
                 <div class="card-header" style="font-weight: bold;">Comentario #1: Rodrigo Becerra</div>
@@ -21,7 +21,7 @@
                     </div>
             </div>
             <button type="button" class="btn btn-dark" onclick="window.location.href='/comentario'" style="margin:0 auto;width:200px;display: flex;align-items: center;justify-content: center; margin-top:30px;">Crear Comentario</button>
-    <a href="/semanas" style="color:blue;">Volver a Semanas</a>
+            <button type="button" class="btn btn-primary" onclick="window.location.href='/semanas'" style="margin:0 auto;width:200px;display: flex;align-items: center;justify-content: center; margin-top:30px;">Volver a Semanas</button>
 </div>
 
 
