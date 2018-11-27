@@ -1,11 +1,9 @@
+@extends('layouts.design')
 @extends('layouts.navbardesign')
-<!DOCTYPE html>
-<html>
-<head>
+@section('edit-tema')
+
 	<title>Editar Tema</title>
-	<link rel="stylesheet" href="css/estiloform.css">
-</head>
-<body>
+
 <div class="container">
 <h2>Editar Tema</h2>
 <?php
@@ -37,5 +35,4 @@
 	
 </form>
 </div>
-</body>
-</html>
+@stop 

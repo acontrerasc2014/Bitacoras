@@ -1,22 +1,8 @@
+@extends('layouts.design')
 @extends('layouts.navbardesign')
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Editar Grupo</title>
-	<link rel="stylesheet" href="css/estiloform.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css/estiloform.css">
-    <script src="http://code.jquery.com/jquery-1.9.0rc1.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+@section('edit-grupo')
 
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('.selection').select2();
-        });
-    
-    </script>
-</head>
-<body>
+<title>Editar Grupo</title>
 <div class="container">
 <h2>Editar Grupo</h2>
 <?php
@@ -70,5 +56,4 @@
 	
 </form>
 </div>
-</body>
-</html>
+@stop 
