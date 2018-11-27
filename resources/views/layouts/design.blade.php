@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/estiloform.css">
     <title>BitacorasGrupales</title>
 
     <!-- BootstrapCDN -->
@@ -19,6 +20,19 @@
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    
+	<link rel="stylesheet" href="css/estiloform.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/estiloform.css">
+    <script src="http://code.jquery.com/jquery-1.9.0rc1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.selection').select2();
+        });
+    
+    </script>
     
     <!--modal -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -38,6 +52,8 @@
     @yield('ver-comentarios')
     @yield('ver-grupos')
     @yield('ver-reflexion')
+    @yield('edit-grupo')
+    @yield('edit-tema')
     
     
 </body>
