@@ -1,5 +1,7 @@
 <?php
 
+//use GuzzleHttp\Client;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -61,3 +63,13 @@ Route::resource('grupoedit', 'GrupoEditController');
 Route::resource('cita', 'CitaController');
 Route::get('semanas/{tema?}', "semcontroller@semana")->name("trabajos");
 
+Route::get('/tecnicas', 'TecnicaController@index');
+Route::get('/tecnicas/{id}', 'TecnicaController@show');
+
+
+/*
+* rutas api 
+*/
+//rutas tecnicas
+Route::get('/tecnicas', 'TecnicaController@index');
+Route::get('/tecnicas/{id}', 'TecnicaController@show');

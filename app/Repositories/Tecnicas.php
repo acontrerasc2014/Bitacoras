@@ -6,7 +6,7 @@ class Tecnicas extends GuzzleHttpRequest{
     */
     public function all(){
         return $this->get('tecnica');
-    }	
+    }
     /*
     * Funcion que devuelve la Tecnica de la id especificada.
     */
@@ -14,5 +14,4 @@ class Tecnicas extends GuzzleHttpRequest{
         return $this->get("tecnica/{$id}");
     }
 }
-
 ?>
