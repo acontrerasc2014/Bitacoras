@@ -38,7 +38,8 @@ class CitaController extends Controller
     {
         if(isset($_POST['submit'])){
 
-            $arreglo = array ("Cita"=> $_POST["citas"],
+            $arreglo = array ("Tipo" => "Cita",
+                              "Cita"=> $_POST["citas"],
                               "Autor"=> $_POST["autor"],  
                               "Titulo" =>$_POST["texto"],
                               "Anio" =>$_POST["anio"],
