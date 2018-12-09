@@ -67,10 +67,11 @@ Route::get('semanas/{tema?}', "semcontroller@semana")->name("trabajos");
 * rutas api 
 */
 //rutas tecnicas
-Route::get('/tecnicas', 'TecnicaController@index');
+Route::get('/tecnicas', 'TecnicaController@showall');
 Route::get('/tecnicas/{id}', 'TecnicaController@show');
 Route::get('/tecnicasadd', 'TecnicaController@add');
 Route::get('/tecnicasupdate', 'TecnicaController@update');
+Route::get('/tecnicasdelete', 'TecnicaController@delete');
 //rutas Usuarios
 Route::get('/usuarios', 'ApiUsuarioController@alluser');
 Route::get('/usuarios/{id}', 'ApiUsuarioController@finduser');
