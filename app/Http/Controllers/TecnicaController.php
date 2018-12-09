@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Repositories\Tecnicas;
 use Illuminate\Http\Request;
+use GuzzleHttp\Client;
 
 class TecnicaController extends Controller
 {
@@ -31,6 +32,24 @@ class TecnicaController extends Controller
     {
         $tecnica = $this->tecnicas->find($id);
         return view('tecnicas.show', compact('tecnica'));
+    }
+    
+    public function add()
+    {
+        $client = new Client([
+            'base_uri' => 'https://noestudiosolo.inf.uct.cl/',
+                    'verify' => false
+        ]);
+        $response = $client->request('POST', 'tecnica', [
+            'form_params' => [
+                //campos de json 'nombre_del_campo' => 'dato a guardar', siguiente_dato
+                'habilidades_desarrolladas' => 'pan con queso x2',
+                //'campo1' => 'dato 2',
+                //'campo2' => 'dato 3',
+            ]
+        ]);
+        $response = $response->getBody()->getContents();
+        dd($response);    
     }
 }
         
