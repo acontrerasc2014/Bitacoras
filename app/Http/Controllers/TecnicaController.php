@@ -51,5 +51,24 @@ class TecnicaController extends Controller
         $response = $response->getBody()->getContents();
         dd($response);    
     }
+    public function update()
+    {
+        $id = '5c0c647fed72150980d00afc';
+        $client = new Client([
+            'base_uri' => 'https://noestudiosolo.inf.uct.cl/',
+                    'verify' => false
+        ]);
+        $response = $client->request('PUT', 'tecnica/'.$id, [
+            'form_params'      => [
+                'habilidades_desarrolladas' => 'pan con queso modificado x2',
+                //'campo1' => 'dato 2',
+                //'campo2' => 'dato 3',
+            ]
+        ]);
+
+        $response = $response->getBody()->getContents();
+        dd($response); 
+    }
+    
 }
         
