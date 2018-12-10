@@ -176,6 +176,7 @@
         </div>
         
         <button type="button" class="btn btn-dark" onclick="window.location.href='/tema'" style="margin:0 auto;width:200px;display: flex;align-items: center;justify-content: center; margin-top:30px;">Crear Tema</button>
+        <button type="button" class="btn btn-primary" onclick="window.location.href=''" style="margin:0 auto;width:200px;display: flex;align-items: center;justify-content: center; margin-top:30px;">Crear Semana</button>
     </div>
 <script>
     $(document).ready(function(){
