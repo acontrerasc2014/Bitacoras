@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/estiloform.css">
+  <!--  <link rel="stylesheet" href="css/estiloform.css"> -->
     <title>BitacorasGrupales</title>
 
     <!-- BootstrapCDN -->
@@ -13,11 +13,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
     
     <!-- diseño formularios -->
     <link rel="stylesheet" href="css/estiloform.css">
     <script type="text/javascript" src="{{ URL::asset('js/creategrupo.js') }}"></script>
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
     
@@ -27,11 +27,18 @@
         $(document).ready(function() {
             $('.selection').select2();
         });
-    
     </script>
     
-    <!--modal -->
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!--navbar posc -->
+    <link rel="stylesheet" href="css/app.css">
+
+    <!-- style -->
+    <style>
+    .container{
+        margin-top:2%;
+        margin-bottom:3%;
+    }
+    </style>
     
 </head>
 <body>
@@ -50,6 +57,7 @@
     @yield('ver-reflexion')
     @yield('edit-grupo')
     @yield('edit-tema')
+    
     
     
 </body>

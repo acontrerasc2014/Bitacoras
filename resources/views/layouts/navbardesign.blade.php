@@ -8,20 +8,29 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
         <title>Bitácoras Grupales</title>
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Oswald:500,700" rel="stylesheet">
+        <link rel="stylesheet" href="css/app.css">
 
+        <!--LOGO -->
+            <link href="img/LogoUCT.png" rel="shortcut icon" type="image/png">
+        <!-- fondo -->
+            <style>
+             body{
+                background-image: linear-gradient(#0060FF,#7395AC);
+                 }
+            </style>
     </head>
     <body>
         <!--Barra de Navegación General-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a class="navbar-brand" href="/">Bitácoras Grupales</a>
+            <a class="navbar-brand" style="font-family: 'Oswald', sans-serif;" href="/">BITÁCORAS GRUPALES</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
-                        <li class="nav-item active">
-                          <a class="nav-link" href="/">Principal <span class="sr-only">(current)</span></a>
+                        <li class="nav-item">
+                          <a class="nav-link" href="/" >Principal</a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="/semanas">Ver Semanas </a>
@@ -34,6 +43,7 @@
                 </div>
         </nav>
         @yield('welcome-2')
+
         
     </body>
 </html>

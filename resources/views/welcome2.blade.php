@@ -75,7 +75,13 @@
                       <p class="card-text">Breve descripción para cada grupo de trabajo y sus respectivos integrantes</p>
                     </div>
             </div>
-
+            <div class="card bg-light mb-3" style="max-width: 18rem;float: left;width: 20%;margin-left:20px;" >
+                    <div class="card-header">Grupo 5</div>
+                    <div class="card-body">
+                      <h5 class="card-title">Grupo de Trabajo 5</h5>
+                      <p class="card-text">Breve descripción para cada grupo de trabajo y sus respectivos integrantes</p>
+                    </div>
+            </div>
         
         </div>
                   
