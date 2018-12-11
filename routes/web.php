@@ -68,10 +68,11 @@ Route::get('semanas/{tema?}', "semcontroller@semana")->name("trabajos");
 */
 //rutas tecnicas
 Route::get('/tecnicas', 'TecnicaController@showall');
+//Route::get('/tecnicasshow', 'TecnicaController@show');
 Route::get('/tecnicas/{id}', 'TecnicaController@show');
 Route::get('/tecnicasadd', 'TecnicaController@add');
-Route::get('/tecnicasupdate', 'TecnicaController@update');
-Route::get('/tecnicasdelete', 'TecnicaController@delete');
+Route::get('/tecnicasupdate/{id}', 'TecnicaController@update');
+Route::get('/tecnicasdelete/{id}', 'TecnicaController@delete');
 //rutas Usuarios
 Route::get('/usuarios', 'ApiUsuarioController@alluser');
 Route::get('/usuarios/{id}', 'ApiUsuarioController@finduser');
