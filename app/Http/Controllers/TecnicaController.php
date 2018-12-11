@@ -1,119 +1,57 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Repositories\Tecnicas;
+use App\Repositories\ConexionAPI;
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
 
 class TecnicaController extends Controller
 {
-    /*
-    * Constructor de objeto Tecnica
-    */
     protected $tecnicas;
     
-    public function __construct(Tecnicas $tecnicas)
+    public function __construct(ConexionAPI $tecnicas)
     {
         $this->tecnicas = $tecnicas;
     }
     
     public function showall()
     {
-        try{
-            $tecnicas = $this->tecnicas->all();
-            dd($tecnicas);
-            //return($tecnicas);
-        }
-        catch(\Exception $ex)
-        {
-            \Log::error($ex);
-        }
+        $tecnicas = $this->tecnicas->all("tecnica");
+        dd($tecnicas);
+        //return($tecnicas);
     }
-    
         
     public function show($id)
     {
-        try
-        {
-            $tecnicas = $this->tecnicas->find($id);
-            dd($tecnicas);
-            //return($tecnica);
-        }
-        catch(\Exception $ex)
-        {
-            \Log::error($ex);
-        }
+        $tecnicas = $this->tecnicas->find("tecnica",$id);
+        dd($tecnicas);
+        //return($tecnicas);
     }
     
-    public function add()
-    {
-        try
-        {
-            $client = new Client([
-                'base_uri' => 'https://noestudiosolo.inf.uct.cl/',
-                        'verify' => false
-            ]);
-            $response = $client->request('POST', 'tecnica', [
-                'form_params' => [
-                    //campos de json 'nombre_del_campo' => 'dato a guardar', siguiente_dato
-                    'habilidades_desarrolladas' => 'pan con queso ',
-                    //'campo1' => 'dato 2',
-                    //'campo2' => 'dato 3',
-                ]
-            ]);
-            $response = $response->getBody()->getContents();
-            dd($response);    
-        }
-        catch(\Exception $ex)
-        {
-            \Log::error($ex);
-        }
-
-    }
-
-    public function update($id)
-    {
-        try
-        {
-            //$id = '5c0fc29f498b38956798a99b'; //id elemnto a eliminar 
-            $client = new Client([
-                'base_uri' => 'https://noestudiosolo.inf.uct.cl/',
-                        'verify' => false
-            ]);
-            $response = $client->request('PUT', 'tecnica/'.$id, [
-                'form_params'      => [
-                    'habilidades_desarrolladas' => 'pan con queso modificado x2',
-                    //'campo1' => 'dato 2',
-                    //'campo2' => 'dato 3',
-                ]
-            ]);
-        }
-        catch(\Exception $ex)
-        {
-            \Log::error($ex);
-        }
-
-        $response = $response->getBody()->getContents();
-        dd($response); 
-    }
 
     public function delete($id)
-        {
-        try
-        {
-            //$id = '5c0fc29f498b38956798a99b';
-            $client = new Client([
-                'base_uri' => 'https://noestudiosolo.inf.uct.cl/',
-                        'verify' => false
-            ]);
-            $response = $client->delete('tecnica/'.$id);
-            dd($response); 
-        }
-        catch(\Exception $ex)
-        {
-            \Log::error($ex);
-            echo("registro no encntrado");
-        }
+    {
+        $tecnicas = $this->tecnicas->delete("tecnica",$id);
+        dd($tecnicas);
+        //return($tecnicas);
+    }
+
+    public function add() //pasar por parametro archivo JSON
+    {
+        $jsonraw = '{"habilidades_desarrolladas":["Expresion oral"],"modalidades":["Presencial"],"etiquetas":["Ingenieria","Expresion oral","Pedagogia en matematicas","Ingenieria civil en informatica","Programacion I"],"nombre":"nueva tecnica","descripcion":"Descripcion de la tecnica nueva","instrucciones":"Dato reservado en caso de necesitarlo","nrecom_participantes":10,"nrecom_integrantes_p_grupo":3,"nrecom_grupos":3,"tutor" :false,"complejidad":"Medio"}';
+        $data = json_decode($jsonraw);
+        
+        $tecnicas = $this->tecnicas->add("tecnica",$data);
+        dd($tecnicas);
+        //return($tecnicas);
+    }
+
+    public function update($id) //pasar por parametro archivo JSON
+    {
+        $jsonraw = '{"habilidades_desarrolladas":["pan con queso "],"modalidades":["Presencial"],"etiquetas":["Ingenieria","Expresion oral","Pedagogia en matematicas","Ingenieria civil en informatica","Programacion I"],"nombre":"nueva tecnica","descripcion":"Descripcion de la tecnica nueva","instrucciones":"Dato reservado en caso de necesitarlo","nrecom_participantes":10,"nrecom_integrantes_p_grupo":3,"nrecom_grupos":3,"tutor" :false,"complejidad":"Medio"}';
+        $data = json_decode($jsonraw);
+        $tecnicas = $this->tecnicas->update("tecnica",$id,$data);
+        dd($tecnicas);
+        //return($tecnicas);
     }
 }
-        
