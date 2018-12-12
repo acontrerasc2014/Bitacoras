@@ -5,7 +5,8 @@
 <div class="container">
     <h1 style="text-align:center;">Grupos creados actualmente</h1>
     <button type="button" class="btn btn-dark" onclick="window.location.href='/grupo'" style="margin:0 auto;width:200px;align-items: center;justify-content: center; margin-top:30px;">Crear Grupo</button>
-            <button type="button" class="btn btn-primary" onclick="window.location.href='/semanas'" style="margin:0 auto;width:200px;align-items: center;justify-content: center; margin-top:30px;">Volver a Semanas</button><br><br>
+            <button type="button" class="btn btn-primary" onclick="window.location.href='/semanas'" style="margin:0 auto;width:200px;align-items: center;justify-content: center; margin-top:30px;">Volver a Semanas</button>
+            <button type="button" class="btn btn-dark" onclick="window.location.href='/vertemas'" style="margin:0 auto;width:200px;align-items: center;justify-content: center; margin-top:30px;">Ver Tema</button><br><br>
     <div class="card-header"><h2 style="font-weight: bold;">Taller de Integración<h2></div>
             <div class="card-body">
                       <h3 style="font-weight: bold;">Grupo 1</h3>
