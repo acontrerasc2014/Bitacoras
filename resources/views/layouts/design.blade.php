@@ -55,6 +55,7 @@
     @yield('ver-comentarios')
     @yield('ver-grupos')
     @yield('ver-reflexion')
+    @yield('ver-temas')
     @yield('edit-grupo')
     @yield('edit-tema')
     

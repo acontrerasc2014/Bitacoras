@@ -51,6 +51,9 @@ Route::get('/vergrupos', function () {
 Route::get('/verreflexion', function () {
     return view('verreflexion');
 });
+Route::get('/vertemas', function () {
+    return view('vertemas');
+});
 
 Route::resource('comentario', 'ComentController');
 Route::resource('pregunta', 'PregController');
