@@ -1,11 +1,18 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Repositories\ConexionAPI;
 use Illuminate\Http\Request;
 
 class GrupoController extends Controller
 {
+    protected $grupo;
+    
+    public function __construct(ConexionAPI $grupo)
+    {
+        $this->grupo = $grupo;
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -36,11 +43,16 @@ class GrupoController extends Controller
     {
         if(isset($_POST['submit'])){
 
-            $arreglo = array ("Nombre de Grupo"=> $_POST["nombre"],
-                              "Descripcion"=> $_POST["desc"],  
-                              "Integrantes" =>$_POST["access_list"]);
+            $data = array ( "rol"=> $_POST["nombre"], 
+                            "tipo"=> $_POST["desc"],  );
+                            #"Integrantes" =>$_POST["access_list"]);
             
-            $JSON = json_encode($arreglo);            
+            #$JSON = json_encode($arreglo); 
+            $grupo = $this->grupo->add("grupo",$data );
+            dd($grupo); #para ver resultado
+        
+        
+            /*           
             $archivo_nombre = "grupo.json";
             file_put_contents($archivo_nombre, $JSON);  
             echo '<script language="javascript">alert("Datos de grupo exportados");</script>';
@@ -71,8 +83,7 @@ class GrupoController extends Controller
             echo "<br/>";
             echo "<a href='/editarGrupo'>Editar!</a>";
 
-
-        
+            */
             //print_r(array_values($data["Integrantes"][0])); 
             
             //echo $data["Integrantes"]."<br/>";
