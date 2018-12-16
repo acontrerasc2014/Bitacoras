@@ -76,6 +76,6 @@ Route::get('/tecnicas/{id}', 'TecnicaController@show');
 Route::get('/tecnicasadd', 'TecnicaController@add');
 Route::get('/tecnicasupdate/{id}', 'TecnicaController@update');
 Route::get('/tecnicasdelete/{id}', 'TecnicaController@delete');
-//rutas Usuarios
-Route::get('/usuarios', 'ApiUsuarioController@alluser');
-Route::get('/usuarios/{id}', 'ApiUsuarioController@finduser');
+
+//rutas ejemplo foro
+Route::get('/addforo', 'EjForoApiController@addforo');
