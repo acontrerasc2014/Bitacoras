@@ -29,6 +29,7 @@ class ComentController extends Controller
     public function create()
     {
         return view('createcom');
+        //HOLA
     }
 
     /**
