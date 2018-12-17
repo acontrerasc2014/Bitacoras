@@ -1,11 +1,16 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Repositories\ConexionAPI;
 use Illuminate\Http\Request;
 
 class ComentController extends Controller
 {
+    protected $comentario;
+    public function __construct(ConexionAPI $comentario)
+    {
+        $this->foro = $comentario;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -24,6 +29,7 @@ class ComentController extends Controller
     public function create()
     {
         return view('createcom');
+        //HOLA
     }
 
     /**
@@ -35,19 +41,28 @@ class ComentController extends Controller
     public function store(Request $request)
     {
         if(isset($_POST['submit'])){
+            $coment = array("nombre"=> "comentario",
+                            "contenido"=> $_POST["coment"],
+                            "tipo"=> "comentario",    
+            );
+            $miforo = array ( "nombre"=> "comentario", 
+                        "posts" => $coment,
+            );    
+            #usa funcion add de ConexionAPI 
+            $comentario = $this->foro->add("foro",$miforo); 
+            dd($comentario); #muetra resultado
+            // $arreglo = array ("Comentario"=> $_POST["coment"]);
+            // $JSON = json_encode($arreglo);
+            // $archivo_nombre = "comentario.json";
+            // file_put_contents($archivo_nombre, $JSON);  
+            // echo '<script language="javascript">alert("comentario exportado");</script>';
 
-            $arreglo = array ("Comentario"=> $_POST["coment"]);
-            $JSON = json_encode($arreglo);
-            $archivo_nombre = "comentario.json";
-            file_put_contents($archivo_nombre, $JSON);  
-            echo '<script language="javascript">alert("comentario exportado");</script>';
+            // $readjson = file_get_contents('comentario.json') ;
 
-            $readjson = file_get_contents('comentario.json') ;
+            // $data = json_decode($readjson, true);
 
-            $data = json_decode($readjson, true);
-
-            echo "Comentario:"."<br/>";
-            echo $data["Comentario"]."<br/>";
+            // echo "Comentario:"."<br/>";
+            // echo $data["Comentario"]."<br/>";
 
     }
     return ;
