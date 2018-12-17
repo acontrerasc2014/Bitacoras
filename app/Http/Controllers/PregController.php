@@ -1,11 +1,18 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Repositories\ConexionAPI;
 use Illuminate\Http\Request;
 
 class PregController extends Controller
 {
+    protected $pregunta;
+
+    public function __construct(ConexionAPI $pregunta)
+    {
+        $this->foro = $pregunta;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -36,22 +43,15 @@ class PregController extends Controller
     {
         if(isset($_POST['submit'])){
 
-            $arreglo = array (  "Tipo"      => "preguntas",
+            $pregun = array (  "Tipo"      => "pregunta",
                                 "Nombre"  => $_POST["nombre"],
-                                "Pregunta"=> $_POST["preg"]);
-            $JSON = json_encode($arreglo);
-            $archivo_nombre = "pregunta.json";
-            file_put_contents($archivo_nombre, $JSON);  
-            echo '<script language="javascript">alert("Pregunta exportada");</script>';
-
-            $readjson = file_get_contents('pregunta.json');
-
-            $data = json_decode($readjson, true);
-
-            echo "Nombre:"."<br/>";
-            echo $data["Nombre"]."<br/>";
-            echo "Pregunta"."<br/>";
-            echo $data["Pregunta"]."<br/>";
+                                "contenido"=> $_POST["preg"]);
+            
+            $miforo = array (  "nombre" => "pregunta",
+                               "posts" => $pregun,
+                            );
+            $pregunta = $this->foro->add("foro",$miforo);
+            dd($pregunta);
         }
     return;
     }
