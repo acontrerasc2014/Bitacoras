@@ -9,7 +9,7 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
         <title>Bitácoras Grupales</title>
         <link href="https://fonts.googleapis.com/css?family=Oswald:500,700" rel="stylesheet">
-        <link rel="stylesheet" href="css/app.css">
+        <!--<link rel="stylesheet" href="css/app.css"> -->
 
         <!--LOGO -->
             <link href="img/LogoUCT.png" rel="shortcut icon" type="image/png">

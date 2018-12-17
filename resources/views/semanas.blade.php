@@ -6,7 +6,7 @@
 
     <h1 style="text-align:center;"> Semanas </h1>
     <button type="button" class="btn btn-dark" onclick="window.location.href='/tema'" style="margin:0 auto;width:200px;align-items: center;justify-content: center; margin-top:30px;">Crear Tema</button>
-        <button type="button" class="btn btn-primary" onclick="window.location.href=''" style="margin:0 auto;width:200px;align-items: center;justify-content: center; margin-top:30px;">Crear Semana</button>
+        <button type="button" class="btn btn-dark" onclick="window.location.href=''" style="margin:0 auto;width:200px;align-items: center;justify-content: center; margin-top:30px;">Crear Semana</button>
     <h3>Abajo podras ver los temas de las siguientes 6 semanas:</h3>
 
         <div class="card-header"><h2 style="font-weight: bold;">Semana 1:</h2></div>

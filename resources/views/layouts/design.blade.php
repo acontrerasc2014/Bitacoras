@@ -30,10 +30,13 @@
     </script>
     
     <!--navbar posc -->
-    <link rel="stylesheet" href="css/app.css">
+    <!-- <link rel="stylesheet" href="css/app.css"> -->
 
     <!-- style -->
     <style>
+        body{
+            margin:0%;
+        }
     .container{
         margin-top:2%;
         margin-bottom:3%;
