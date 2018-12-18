@@ -60,7 +60,7 @@ Route::get('/vertemas', function () {
 Route::get('/elimina/{id}', 'RespController@borrar');
 Route::resource('/respuesta1', 'RespController');
 
-
+Route::resource('temaa', 'TemaController');
 Route::resource('comentario', 'ComentController');
 Route::resource('pregunta', 'PregController');
 Route::resource('respuesta', 'RespController');
