@@ -23,7 +23,7 @@ class TecnicaController extends Controller
         
     public function show($id)
     {
-        $tecnicas = $this->tecnicas->find("tecnica",$id);
+        $tecnicas = $this->tecnicas->find("foro",$id);
         dd($tecnicas);
         //return($tecnicas);
     }

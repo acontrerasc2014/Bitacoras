@@ -45,7 +45,7 @@ class CitaController extends Controller
             $citas1 = array("autor"=>  $_POST["citas"], 
                             "titulo"=>"es una cita de tu",   
             );
-            $respuesta1 = array("cita" => $citas1, #para mas comentarios  se usa array () ,  
+            $respuesta1 = array("citas" => $citas1, #para mas comentarios  se usa array () ,  
                                 "tipo"=> "respuesta",
             );
             $miforo = array ( "nombre"=> "cita", 

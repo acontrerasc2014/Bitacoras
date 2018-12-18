@@ -50,8 +50,8 @@ class ComentController extends Controller
             );    
             #usa funcion add de ConexionAPI 
             $comentario = $this->foro->add("foro",$miforo);
-            $var=($comentario);
-            $com=$var->{'posts'};
+            $vari=($comentario);
+            $com=$vari->{'posts'};
 
             //dd($comentario); #muetra resultado
             
@@ -69,8 +69,29 @@ class ComentController extends Controller
             // echo $data["Comentario"]."<br/>";
 
     }
-    return view('come',compact('var','com'));
-}
+
+        
+        if(isset($_POST['submit2'])){
+
+            $coment = array("nombre"=> "comentario",
+                            "contenido"=> $_POST["coment"],
+                            "tipo"=> "comentario",    
+            );
+            $miforo = array ( "nombre"=> "comentario", 
+                        "posts" => $coment,
+            );
+            $id= $_POST["i"]; 
+            echo '<script language="javascript">alert("comentario exportado");</script>';
+            //$id= $_POST['i'];    
+            #usa funcion add de ConexionAPI 
+            $comentario = $this->foro->update("foro",$id,$miforo); 
+            $vari = ($comentario);
+            //dd($respuesta); #muetra resultado
+            $com = $vari->{'posts'};
+        }
+    return view ('come', compact('vari','com'));
+    }
+    
 
     /**
      * Display the specified resource.
@@ -101,10 +122,7 @@ class ComentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+   
 
     /**
      * Remove the specified resource from storage.
@@ -116,4 +134,15 @@ class ComentController extends Controller
     {
         //
     }
+
+    public function borrar($id)
+    {
+        echo '<script language="javascript">alert("comentario eliminado");</script>';
+        $comentario = $this->foro->delete("foro",$id);
+        //dd($respuesta);
+        return view('createcom');
+        
+    }
+
+    
 }

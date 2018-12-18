@@ -56,8 +56,9 @@ Route::get('/vertemas', function () {
 });
 
 
-
-Route::get('/elimina/{id}', 'RespController@borrar');
+Route::get('/eliminaCom/{id}', 'ComentController@borrar');  //listo
+Route::resource('/comentario1', 'ComentController@borrar');
+Route::get('/elimina/{id}', 'RespController@borrar');       // listo
 Route::resource('/respuesta1', 'RespController');
 Route::get('/elimina/{id}', 'PregController@borrar');
 Route::resource('/pregunta1', 'PregController');
