@@ -55,6 +55,12 @@ Route::get('/vertemas', function () {
     return view('vertemas');
 });
 
+
+
+Route::get('/elimina/{id}', 'RespController@borrar');
+Route::resource('/respuesta1', 'RespController');
+
+
 Route::resource('comentario', 'ComentController');
 Route::resource('pregunta', 'PregController');
 Route::resource('respuesta', 'RespController');
@@ -65,6 +71,7 @@ Route::resource('grupo', 'GrupoController');
 Route::resource('grupoedit', 'GrupoEditController');
 Route::resource('cita', 'CitaController');
 Route::get('semanas/{tema?}', "semcontroller@semana")->name("trabajos");
+
 
 /*
 * rutas api 

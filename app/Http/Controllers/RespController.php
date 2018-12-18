@@ -1,16 +1,16 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Repositories\ConexionAPI;
 use Illuminate\Http\Request;
 
 class RespController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    protected $respuesta;
+    public function __construct(ConexionAPI $respuesta)
+    {
+        $this->foro = $respuesta;
+    }
     public function index()
     {
         return view('createresp');
@@ -35,10 +35,25 @@ class RespController extends Controller
     public function store(Request $request)
     {
         if(isset($_POST['submit'])){
+
+            $resp = array("nombre"=> $_POST["nombre"],
+                            "contenido"=> $_POST["resp"],
+                            "tipo"=> "respuesta",    
+            );
+            $miforo = array ( "nombre"=> $_POST["nombre"], 
+                        "posts" => $resp,
+            );    
+            #usa funcion add de ConexionAPI 
+            $respuesta = $this->foro->add("foro",$miforo); 
+            $dec = ($respuesta);
+            //dd($respuesta); #muetra resultado
+            $res = $dec->{'posts'};
     
-            $arreglo = array ( "Tipo"     => "Respuesta",
-                               "Nombre"   => $_POST["nombre"],
-                               "Respuesta"=> $_POST["resp"]);
+            
+    
+            /*$arreglo = array ( "tipo"     => "Respuesta",
+                               "nombre"   => $_POST["nombre"],
+                               "contenido"=> $_POST["resp"]);
             $JSON = json_encode($arreglo);                      
             $archivo_nombre = "respuesta.json";
             file_put_contents($archivo_nombre, $JSON);  
@@ -52,8 +67,29 @@ class RespController extends Controller
             echo $data["Nombre"]."<br/>";
             echo "Respuesta"."<br/>";
             echo $data["Respuesta"]."<br/>";
+            */
         }
-    return;
+
+        
+        if(isset($_POST['submit2'])){
+
+            $resp = array("nombre"=> $_POST["nombre"],
+                            "contenido"=> $_POST["resp"],
+                            "tipo"=> "respuesta",    
+            );
+            $miforo = array ( "nombre"=> $_POST["nombre"], 
+                        "posts" => $resp,
+            );
+            $id= $_POST["i"]; 
+            echo '<script language="javascript">alert("respuesta exportada");</script>';
+            //$id= $_POST['i'];    
+            #usa funcion add de ConexionAPI 
+            $respuesta = $this->foro->update("foro",$id,$miforo); 
+            $dec = ($respuesta);
+            //dd($respuesta); #muetra resultado
+            $res = $dec->{'posts'};
+        }
+    return view ('resp', compact('dec','res'));
     }
     
 
@@ -86,10 +122,7 @@ class RespController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+   
 
     /**
      * Remove the specified resource from storage.
@@ -101,4 +134,15 @@ class RespController extends Controller
     {
         //
     }
+
+    public function borrar($id)
+    {
+        echo '<script language="javascript">alert("respuesta eliminada");</script>';
+        $respuesta = $this->foro->delete("foro",$id);
+        //dd($respuesta);
+        return view('createresp');
+        
+    }
+
+    
 }

@@ -16,7 +16,7 @@ class TecnicaController extends Controller
     
     public function showall()
     {
-        $tecnicas = $this->tecnicas->all("tecnica");
+        $tecnicas = $this->tecnicas->all("foro");
         dd($tecnicas);
         //return($tecnicas);
     }
