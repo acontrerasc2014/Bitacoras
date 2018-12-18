@@ -9,7 +9,7 @@ class TemaController extends Controller
     protected $tema;
     public function __construct(ConexionAPI $tema)
     {
-        $this->anuncio = $tema;
+        $this->foro = $tema;
     }
     /**
      * Display a listing of the resource.
@@ -43,17 +43,17 @@ class TemaController extends Controller
     {
         if(isset($_POST['submit'])){
 
-            $temon = array ("Nombre"=> $_POST["nombre"],
+            $temon = array ("nombreuser"=> $_POST["nombre"],
                               "Correo"=> $_POST["email"],
-                              "titulo"=> $_POST["titulo"],  
-                              "mensaje" =>$_POST["tema"],
+                              "nombre"=> $_POST["titulo"],  
+                              "contenido" =>$_POST["tema"],
                               "tipo" => "tema",
                             );
-           // $mianuncio = array ( "nombre"=> "tema", 
-             //                 "tipo" => $temon,
-               //   );    
-            $temoide = $this->anuncio->add("anuncio",$temon); 
-            dd($temoide); #muetra resultado
+            $miforo = array ( "nombre"=> "tema", 
+                            "posts" => $temon,
+                  );    
+            $temas = $this->foro->add("foro",$miforo); 
+            dd($temas); #muetra resultado
             
             
     }
@@ -69,7 +69,7 @@ class TemaController extends Controller
      */
     public function show($id)
     {
-        //
+       //
     }
 
     /**
