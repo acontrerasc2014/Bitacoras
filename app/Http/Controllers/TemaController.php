@@ -49,12 +49,14 @@ class TemaController extends Controller
                               "contenido" =>$_POST["tema"],
                               "tipo" => "tema",
                             );
-            $miforo = array ( "nombre"=> "tema", 
+            $miforo = array ( "nombre"=> $_POST["titulo"], 
                             "posts" => $temon,
                   );    
             $temass = $this->foro->add("foro",$miforo); 
-            dd($temass); #muetra resultado
-            
+            //dd($temass); #muetra resultado
+            $var=($temass);
+            $tem=$var->{'posts'};
+            return view('theme',compact('var','tem'));
             
     }
     return ;
