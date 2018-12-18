@@ -1,11 +1,16 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Repositories\ConexionAPI;
 use Illuminate\Http\Request;
 
 class CitaController extends Controller
-{
+{   
+    protected $cita;
+    public function __construct(ConexionAPI $cita)
+    {
+        $this->foro = $cita;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -37,8 +42,19 @@ class CitaController extends Controller
     public function store(Request $request)
     {
         if(isset($_POST['submit'])){
-
-            $arreglo = array ("Tipo" => "Cita",
+            $citas1 = array("autor"=>  $_POST["citas"], 
+                            "titulo"=>"es una cita de tu",   
+            );
+            $respuesta1 = array("cita" => $citas1, #para mas comentarios  se usa array () ,  
+                                "tipo"=> "respuesta",
+            );
+            $miforo = array ( "nombre"=> "cita", 
+                              "posts" => $respuesta1,
+            );    
+            #usa funcion add de ConexionAPI 
+            $cita = $this->foro->add("foro",$miforo); 
+            dd($cita); #muetra resultado
+            /*$arreglo = array ("Tipo" => "Cita",
                               "Cita"=> $_POST["citas"],
                               "Autor"=> $_POST["autor"],  
                               "Titulo" =>$_POST["texto"],
@@ -63,6 +79,7 @@ class CitaController extends Controller
             echo $data["Anio"]."<br/>";
             echo "Fecha"."<br/>";
             echo $data["Fecha"]."<br/>";
+            */
     }
     return ;
     }
