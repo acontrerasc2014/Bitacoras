@@ -49,8 +49,12 @@ class ComentController extends Controller
                         "posts" => $coment,
             );    
             #usa funcion add de ConexionAPI 
-            $comentario = $this->foro->add("foro",$miforo); 
-            dd($comentario); #muetra resultado
+            $comentario = $this->foro->add("foro",$miforo);
+            $var=($comentario);
+            $com=$var->{'posts'};
+
+            //dd($comentario); #muetra resultado
+            
             // $arreglo = array ("Comentario"=> $_POST["coment"]);
             // $JSON = json_encode($arreglo);
             // $archivo_nombre = "comentario.json";
@@ -65,7 +69,7 @@ class ComentController extends Controller
             // echo $data["Comentario"]."<br/>";
 
     }
-    return ;
+    return view('come',compact('var','com'));
 }
 
     /**
