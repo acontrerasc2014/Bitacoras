@@ -96,6 +96,8 @@ Route::get('/temas', 'TemaController@showall');
 Route::get('/tema/{id}', 'TemaController@show');
 //Route::get('/temaupdate/{id}', 'TemaController@update');
 Route::get('/temadelete/{id}', 'TemaController@delete');
+Route::get('/temaeli/{id}', 'TemaController@borrar');
+Route::resource('/tema1', 'TemaController');
 
 
 //rutas Usuarios

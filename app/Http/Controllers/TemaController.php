@@ -99,6 +99,14 @@ class TemaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    public function borrar($id)
+    {
+        echo '<script language="javascript">alert("respuesta eliminada");</script>';
+        $temass = $this->foro->delete("foro",$id);
+        //dd($respuesta);
+        return view('createtema');
+        
+    }
     public function delete($id)
     {
         $temas = $this->foro->delete("foro",$id);
