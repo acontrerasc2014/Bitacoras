@@ -3,9 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Repositories\ConexionAPI;
 class TemaController extends Controller
 {
+    protected $tema;
+    public function __construct(ConexionAPI $tema)
+    {
+        $this->anuncio = $tema;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -38,33 +43,18 @@ class TemaController extends Controller
     {
         if(isset($_POST['submit'])){
 
-            $arreglo = array ("Nombre"=> $_POST["nombre"],
+            $temon = array ("Nombre"=> $_POST["nombre"],
                               "Correo"=> $_POST["email"],
-                              "Titulo"=> $_POST["titulo"],  
-                              "Descripcion" =>$_POST["tema"]);
-            $JSON = json_encode($arreglo);            
-            $archivo_nombre = "tema.json";
-            file_put_contents($archivo_nombre, $JSON);  
-            echo '<script language="javascript">alert("Tema exportado");</script>';
-
-            $readjson = file_get_contents('tema.json') ;
-
-            $data = json_decode($readjson, true);
-
-            echo "Nombre:"."<br/>";
-            echo $data["Nombre"]."<br/>";
-            echo "Correo:"."<br/>";
-            echo $data["Correo"]."<br/>";
-            echo "Titulo:"."<br/>";
-            echo $data["Titulo"]."<br/>";
-            echo "Descripcion:"."<br/>";
-            echo $data["Descripcion"]."<br/>";
-            echo "<br/>";
-            echo "Te equivocaste en algo? Editalo!";
-            echo "<br/>";
-            echo "<a href='/editarTema'>Editar!</a>";
+                              "titulo"=> $_POST["titulo"],  
+                              "mensaje" =>$_POST["tema"],
+                              "tipo" => "tema",
+                            );
+           // $mianuncio = array ( "nombre"=> "tema", 
+             //                 "tipo" => $temon,
+               //   );    
+            $temoide = $this->anuncio->add("anuncio",$temon); 
+            dd($temoide); #muetra resultado
             
-
             
     }
     return ;
