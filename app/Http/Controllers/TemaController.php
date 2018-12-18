@@ -56,6 +56,27 @@ class TemaController extends Controller
             //dd($temass); #muetra resultado
             $var=($temass);
             $tem=$var->{'posts'};
+
+            if(isset($_POST['submit2'])){
+
+                $temon = array ("nombreuser"=> $_POST["nombre"],
+                "Correo"=> $_POST["email"],
+                "nombre"=> $_POST["titulo"],  
+                "contenido" =>$_POST["tema"],
+                "tipo" => "tema",
+              );
+            $miforo = array ( "nombre"=> $_POST["titulo"], 
+              "posts" => $temon,
+    );    
+                $id= $_POST["i"]; 
+                echo '<script language="javascript">alert("respuesta exportada");</script>';
+                //$id= $_POST['i'];    
+                #usa funcion add de ConexionAPI 
+                $temass = $this->foro->update("foro",$id,$miforo); 
+                $dec = ($temass);
+                //dd($temass); #muetra resultado
+                $tem = $dec->{'posts'};
+            }
             return view('theme',compact('var','tem'));
             
     }
@@ -101,11 +122,17 @@ class TemaController extends Controller
      */
     public function delete($id)
     {
-        $temas = $this->foro->delete("foro",$id);
-        dd($temas);
+        //
 
     }
-
+    public function borrar($id)
+    {
+        echo '<script language="javascript">alert("tema eliminado");</script>';
+        $temass = $this->foro->delete("foro",$id);
+        //dd($respuesta);
+        return view("createtema");
+        
+    }
     /**
      * Remove the specified resource from storage.
      *
