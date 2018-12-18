@@ -59,6 +59,8 @@ Route::get('/vertemas', function () {
 
 Route::get('/elimina/{id}', 'RespController@borrar');
 Route::resource('/respuesta1', 'RespController');
+Route::get('/elimina/{id}', 'PregController@borrar');
+Route::resource('/pregunta1', 'PregController');
 
 Route::resource('temaa', 'TemaController');
 Route::resource('comentario', 'ComentController');
@@ -80,14 +82,26 @@ Route::get('semanas/{tema?}', "semcontroller@semana")->name("trabajos");
 Route::get('/tecnicas', 'TecnicaController@showall');
 //Route::get('/tecnicasshow', 'TecnicaController@show');
 Route::get('/tecnicas/{id}', 'TecnicaController@show');
+
 Route::get('/tecnicasadd', 'TecnicaController@add');
 Route::get('/tecnicasupdate/{id}', 'TecnicaController@update');
 Route::get('/tecnicasdelete/{id}', 'TecnicaController@delete');
 
+
 //rutas ejemplo foro
 Route::get('/addforo', 'EjForoApiController@addforo');
+
 //rutas tema
 Route::get('/temas', 'TemaController@showall');
 Route::get('/tema/{id}', 'TemaController@show');
 //Route::get('/temaupdate/{id}', 'TemaController@update');
 Route::get('/temadelete/{id}', 'TemaController@delete');
+
+
+//rutas Usuarios
+Route::get('/usuarios', 'ApiUsuarioController@alluser');
+Route::get('/usuarios/{id}', 'ApiUsuarioController@finduser');
+
+Route::get('/foros', 'ForoController@index');
+Route::get('/foros/{$id}', 'ForoController@show');
+
