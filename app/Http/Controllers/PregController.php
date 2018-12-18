@@ -43,8 +43,8 @@ class PregController extends Controller
     {
         if(isset($_POST['submit'])){
 
-            $pregun = array (  "Tipo"      => "pregunta",
-                                "Nombre"  => $_POST["nombre"],
+            $pregun = array (  "tipo"      => "pregunta",
+                                "nombre"  => $_POST["nombre"],
                                 "contenido"=> $_POST["preg"],
                             );
             
@@ -53,16 +53,16 @@ class PregController extends Controller
                             );
 
             $pregunta = $this->foro->add("foro",$miforo);
-            dd($pregunta);
+            //dd($pregunta);
             $var = ($pregunta);
             $pre = $var->{"posts"};
         }
 
 
-        if (issets($_POST['submit2'])){
+        if (isset($_POST['submit2'])){
             
-            $pregun = array (  "Tipo"=> "pregunta",
-                               "Nombre"  => $_POST["nombre"],
+            $pregun = array (  "tipo"=> "pregunta",
+                               "nombre"  => $_POST["nombre"],
                                "contenido"=> $_POST["preg"]);
             
             $miforo = array( "nombre"=> $_POST["nombre"],

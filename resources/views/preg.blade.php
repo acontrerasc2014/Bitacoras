@@ -62,7 +62,7 @@
         </div>
 
 
-        <a href="/elimina/{{$var->_id}} ">Delete</a>
+        <a href="/elimina123/{{$var->_id}} ">Delete</a>
         <br>
     
     </div>

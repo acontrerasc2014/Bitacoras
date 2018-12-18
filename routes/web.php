@@ -60,7 +60,7 @@ Route::get('/eliminaCom/{id}', 'ComentController@borrar');  //listo
 Route::resource('/comentario1', 'ComentController@borrar');
 Route::get('/elimina/{id}', 'RespController@borrar');       // listo
 Route::resource('/respuesta1', 'RespController');
-Route::get('/elimina/{id}', 'PregController@borrar');
+Route::get('/elimina123/{id}', 'PregController@borrar');
 Route::resource('/pregunta1', 'PregController');
 
 Route::resource('temaa', 'TemaController');
