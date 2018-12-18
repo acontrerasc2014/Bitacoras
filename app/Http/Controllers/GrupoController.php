@@ -49,8 +49,32 @@ class GrupoController extends Controller
             
             #$JSON = json_encode($arreglo); 
             $grupo = $this->grupo->add("grupo",$data );
-            dd($grupo); #para ver resultado
-        
+            //dd($grupo); #para ver resultado
+            $var=($grupo);
+            //$grup=$var->{'posts'};
+            //dd($var);
+        }
+
+            if(isset($_POST['submit2'])){
+
+                $data = array ( "rol"=> $_POST["nombre"], 
+                            "tipo"=> $_POST["desc"],  );
+                            #"Integrantes" =>$_POST["access_list"]);
+            
+                #$JSON = json_encode($arreglo);
+                $id= $_POST["i"];  
+                $grupo = $this->grupo->update("grupo",$id,$data );
+                //dd($grupo); #para ver resultado
+                $var=($grupo);
+                //$grup=$var->{'posts'};
+                //dd($var);
+                
+              
+               
+            }
+            return view('grupoxd',compact('var'));
+            
+    }
         
             /*           
             $archivo_nombre = "grupo.json";
@@ -87,9 +111,9 @@ class GrupoController extends Controller
             //print_r(array_values($data["Integrantes"][0])); 
             
             //echo $data["Integrantes"]."<br/>";
-    }
-    return ;
-    }
+    
+    
+    
 
     /**
      * Display the specified resource.
@@ -134,5 +158,14 @@ class GrupoController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function borrar($id)
+    {
+        echo '<script language="javascript">alert("grupo eliminado");</script>';
+        $grupo = $this->grupo->delete("grupo",$id);
+        //dd($respuesta);
+        return view('creategrupo');
+        
     }
 }

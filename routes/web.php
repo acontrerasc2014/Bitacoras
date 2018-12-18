@@ -56,6 +56,11 @@ Route::get('/vertemas', function () {
 });
 
 
+
+
+
+Route::resource('/grupo1', 'GrupoController');
+Route::get('/eliminagrupo/{id}', 'GrupoController@borrar'); 
 Route::get('/eliminaCom/{id}', 'ComentController@borrar');  //listo
 Route::resource('/comentario1', 'ComentController@borrar');
 Route::get('/elimina/{id}', 'RespController@borrar');       // listo
