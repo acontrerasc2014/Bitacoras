@@ -79,3 +79,8 @@ Route::get('/tecnicasdelete/{id}', 'TecnicaController@delete');
 
 //rutas ejemplo foro
 Route::get('/addforo', 'EjForoApiController@addforo');
+//rutas tema
+Route::get('/temas', 'TemaController@showall');
+Route::get('/tema/{id}', 'TemaController@show');
+//Route::get('/temaupdate/{id}', 'TemaController@update');
+Route::get('/temadelete/{id}', 'TemaController@delete');

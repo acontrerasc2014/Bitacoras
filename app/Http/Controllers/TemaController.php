@@ -52,8 +52,8 @@ class TemaController extends Controller
             $miforo = array ( "nombre"=> "tema", 
                             "posts" => $temon,
                   );    
-            $temas = $this->foro->add("foro",$miforo); 
-            dd($temas); #muetra resultado
+            $temass = $this->foro->add("foro",$miforo); 
+            dd($temass); #muetra resultado
             
             
     }
@@ -67,9 +67,16 @@ class TemaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    public function showall()
+    {
+        $temas = $this->foro->all("foro");
+        dd($temas);
+        //return($tecnicas);
+    }
     public function show($id)
     {
-       //
+        $temas = $this->foro->find("foro",$id);
+        dd($temas);
     }
 
     /**
@@ -90,9 +97,11 @@ class TemaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function delete($id)
     {
-        //
+        $temas = $this->foro->delete("foro",$id);
+        dd($temas);
+
     }
 
     /**
